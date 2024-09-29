@@ -26,7 +26,7 @@ export const verify = async (token, secret) => {
     jwt.verify(token, secret, (error, payload) => {
       if (error) {
         logger.error(error);
-        resolve(null);
+        reject(null);
       } else {
         resolve(payload);
       }
